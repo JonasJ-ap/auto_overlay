@@ -109,6 +109,7 @@ class AutoOverlay:
 
     def auto_overlay(self, *, videopath, start_time, crop_x, crop_y, crop_width, crop_height, rect_width, rect_height, frame_period, show_rect):
         vidcap = cv2.VideoCapture(videopath)
+        print(vidcap.get(cv2.CAP_PROP_FPS))
         vidcap.set(cv2.CAP_PROP_POS_MSEC, start_time * 1000)
 
         # x, y, w, h
